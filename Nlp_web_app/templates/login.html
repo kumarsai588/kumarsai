@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
+        <h1 style="text-align: center; margin-top:150px">NLP APP</h1>
+        <h2 style="text-align: center;">Login here</h2>
+    {% if message %}
+        {% if message == "Registration successful. kindly login to proceed!!!" %}
+            <p style="color:green;">{{ message }}</p>
+        {% else %}
+            <p style="color:red;">{{ message }}</p>
+        {% endif %}
+    {% endif %}
+        <form action="/performLogin" style="text-align: center;" method='post'>
+            <label>Enter your Email: </label>
+            <input type="email" name="user-email"><br><br>
+            <label>Enter your password: </label>
+            <input type="password" name='user-password'><br><br>
+            <input type="submit" value="Sign-in">
+            <p>Not a member? then <a href="/register">Sign-up</a></p>
+        </form>
+    </div>
+</body>
+</html>

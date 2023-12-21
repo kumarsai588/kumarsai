@@ -1,0 +1,9 @@
+https://github.com/topics/line-segmentation
+
+https://github.com/DIVA-DIA/Text-Line-Segmentation-Method-for-Medieval-Manuscripts
+
+https://github.com/ChanChiChoi/awesome-ocr
+
+https://beratkurar.github.io/papers/Icfhr2018Text.pdf
+
+https://www.mdpi.com/2076-3417/10/22/8276

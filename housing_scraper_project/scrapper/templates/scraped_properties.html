@@ -1,0 +1,36 @@
+<!-- scraper/templates/scraped_properties.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraped Properties</title>
+</head>
+<body>
+    <h1>Scraped Properties</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="url">Enter a Housing.com URL to scrape:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Scrape</button>
+    </form>
+
+    <ul>
+        {% for property in properties %}
+        <li>
+            <h2>{{ property.title }}</h2>
+            <p>{{ property.description }}</p>
+            <p>Price: {{ property.price }}</p>
+            <p>Location: {{ property.location }}</p>
+            <p>Images:</p>
+            <ul>
+                {% for image in property.propertyimage_set.all %}
+                <li><img src="{{ image.image.url }}" alt="Property Image"></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
